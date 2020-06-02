@@ -10,12 +10,12 @@ class ControllerHome
     {
         if(isset($url) && count($url)>1)
         {
-            echo "exeption dans controllerhome";
+            // echo "exeption dans controllerhome";
             throw new Exception('Page introuvable');
         }
         else
         {
-            echo "loading posts<br>";
+            // echo "loading posts<br>";
             $this->posts();            
         }
     }

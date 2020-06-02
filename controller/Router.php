@@ -10,7 +10,7 @@ class Router {
         try
         {
             spl_autoload_register(function($class){
-                echo("class : ".$class."\n");
+                // echo("class : ".$class."\n");
                 require_once('model/'.$class.'.php');
             });
             
@@ -24,17 +24,17 @@ class Router {
                 $controller = ucfirst(strtolower($url[0]));
                 $controllerClass = "Controller".$controller;
                 $controllerFile = "controller/".$controllerClass.".php";
-                echo("controllerFile : ".$controllerFile."\n");
+                // echo("controllerFile : ".$controllerFile."\n");
 
                 if(file_exists($controllerFile))
                 {
-                    echo "exists\n<br>";
+                    // echo "exists\n<br>";
                     require_once($controllerFile);
                     $this->_ctrl = new $controllerClass($url);
                 }
                 else
                 {
-                    echo "EEEEEEXCEPTION route";
+                    // echo "EEEEEEXCEPTION route";
                     throw new Exception('Page introuvable ('.$controllerFile.')');
                 }                
             }

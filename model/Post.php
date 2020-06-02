@@ -51,25 +51,25 @@ class Post
 
     public function setId_article($t)
     {   
-        echo '<br>\n '.$t.' !!!';
+        // echo '<br>\n '.$t.' !!!';
         if(is_string($t))
-        $this->_id_article = $t;
+            $this->_id_article = $t;
     }
     public function setArticle_title($t)
     {   
-        echo '<br>\n '.$t.' !!!';
+        // echo '<br>\n '.$t.' !!!';
         if(is_string($t))
-        $this->_article_title = $t;
+            $this->_article_title = $t;
     }
     public function setArticle_text($t)
     {
-        echo '<br>\n '.$t.' !!!';
+        // echo '<br>\n '.$t.' !!!';
         if(is_string($t))
-        $this->_article_text = $t;
+            $this->_article_text = $t;
     }
     public function setArticle_date($t)
     {
-        echo '<br>\n '.$t.' !!!';
+        // echo '<br>\n '.$t.' !!!';
         if(is_string($t))
             $this->_article_date = $t;
     }

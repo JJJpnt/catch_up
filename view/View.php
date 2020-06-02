@@ -13,16 +13,18 @@ class View
     // Génère et affiche la vue
     public function generate($data)
     {
-        echo "<br>-----------------------<br>VIEW : ".$this->_file;
-        var_dump($data);
-        echo "<br>-----------------------<br>";
+        // echo "<br>-----------------------<br>VIEW : ".$this->_file;
+        // var_dump($data);
+        // echo "<br>-----------------------<br>";
+
         // Coeur de la vue
         $content = $this->generateFile($this->_file, $data);
 
         // Template de la vue
-        $view = $this->generateFile('view/template.php', array('t' => $this->_t, 'content' => $content));
+        $view = $this->generateFile('view/blogTemplate.php', array('t' => $this->_t, 'content' => $content));
 
-        echo "<br>-----------------------<br>VIEW : ".$view."<br>-----------------------<br>";
+        echo $view;
+        // echo "<br>-----------------------<br>VIEW : ".$view."<br>-----------------------<br>";
     }
 
     // Génère le fichier de la vue
@@ -30,10 +32,10 @@ class View
     {
         if(file_exists($file))
         {
-            echo "<br> generateFile exists $file <br>";
+            // echo "<br> generateFile exists $file <br>";
             extract($data);
             ob_start();
-            echo "ob_start :::::::::::::::::::::::::::::::::::::::::::::::::<br>";
+            // echo "ob_start :::::::::::::::::::::::::::::::::::::::::::::::::<br>";
             require($file);
             return ob_get_clean();
         }

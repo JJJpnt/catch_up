@@ -28,10 +28,10 @@ abstract class Model
         $stmt->execute();
         while($data = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            var_dump($data);
+            // var_dump($data);
             $var[] = new $obj($data);
         }
-        var_dump($var);
+        // var_dump($var);
         return $var;
         $stmt->closeCursor();
     }
